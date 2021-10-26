@@ -1,5 +1,5 @@
 import Test from 'views/test/test.vue'
-import Test2 from 'views/test/test2.vue'
+import Mapsh from 'views/test/map-shanghai.vue'
 
 export default [
   {
@@ -8,8 +8,8 @@ export default [
     name: 'test',
   },
   {
-    path: '/test2',
-    component: Test2,
-    name: 'test2',
+    path: '/mapsh',
+    component: Mapsh,
+    name: 'mapsh',
   },
 ]
