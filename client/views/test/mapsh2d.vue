@@ -51,15 +51,11 @@ export default {
         geo: {
           map: '上海',
           roam: true,
-          boxDepth: 100,
           regionHeight: 2.5,
           itemStyle: {
+            color: '#1d5adc',
             borderWidth: 0.5,
-          },
-          viewControl: {
-            distance: 130, //地图视角 控制初始大小
-            rotateSensitivity: 0, //禁止旋转
-            zoomSensitivity: 0 //禁止缩放
+            borderColor: '#09C6EE'
           },
           emphasis: {
             //当鼠标放上去  地区区域是否显示名称
@@ -67,8 +63,9 @@ export default {
               show: false,
             },
             itemStyle: {
+              // color: '#0eb7ff',
               shadowColor: 'rgba(0, 0, 0, 0.5)',
-              shadowBlur: 20
+              shadowBlur: 60
             }
           },
         },
@@ -79,15 +76,15 @@ export default {
             coordinateSystem: 'geo',
             zlevel: 2,
             symbol: 'image://./static/mp.png',
-            symbolSize: 50,
+            symbolSize: 60,
             label: {
               show: true,
               position: 'top',
-              distance: 0,
+              distance: -20,
               formatter: '{b}',
               textStyle: {
                 color: '#66e3ff',
-                fontSize: 20,
+                fontSize: 14,
                 backgroundColor: 'transparent'
               }
             },
@@ -99,11 +96,11 @@ export default {
             emphasis: {
               itemStyle: {
                 shadowColor: 'rgba(0, 0, 0, 0.5)',
-                shadowBlur: 20
+                shadowBlur: 60
               }
             },
             data: [
-              {name: '站点1', value: [121.59, 31.22, 3000]},
+              {name: '站点1', value: [121.59, 31.22, 3000], symbol: 'image://./static/mp1.png', symbolSize: 60},
               {name: '站点2', value: [121.49, 31.22, 3000]},
               {name: '站点3', value: [121.59, 31.12, 3000]},
               {name: '站点4', value: [121.59, 31.02, 3000]},
@@ -114,9 +111,9 @@ export default {
       }
       let mychart = echarts.init(document.getElementById(id));
       mychart.setOption(geooption);
-      // mychart.on('mouseover', function(param){
-      //   console.log(param)
-      // })
+      mychart.on('click', function(param){
+        console.log(param)
+      })
       // mychart.on('mouseout', function(param){
       //   console.log(mychart.getOption())
       //   if(param.data && param.data.fl){
