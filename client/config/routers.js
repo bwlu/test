@@ -1,6 +1,7 @@
 import Test from 'views/test/test.vue'
 import Mapsh from 'views/test/map-shanghai.vue'
 import Mapht from 'views/test/mapht-shanghai.vue'
+import Map2d from 'views/test/mapsh2d.vue'
 import ImageClick from 'views/test/image-click.vue'
 
 export default [
@@ -18,6 +19,11 @@ export default [
     path: '/mapht',
     component: Mapht,
     name: 'mapht',
+  },
+  {
+    path: '/map2d',
+    component: Map2d,
+    name: 'map2d',
   },
   {
     path: '/imgclick',
