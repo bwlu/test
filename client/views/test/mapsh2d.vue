@@ -77,6 +77,7 @@ export default {
             zlevel: 2,
             symbol: 'image://./static/mp.png',
             symbolSize: 60,
+            symbolOffset: [0, '-50%'],
             label: {
               show: true,
               position: 'top',
