@@ -24,7 +24,7 @@
 import echarts from 'echarts/lib/echarts'; //echarts
 import '../../map/js/province/shanghai.js'; //对应的省份
 import '../../map/js/china.js'; //对应的省份
-import 'echarts-gl'; //3D地图插件
+// import 'echarts-gl'; //3D地图插件
 export default {
   data() {
     return {};

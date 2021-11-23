@@ -99,7 +99,11 @@ export default {
         geo: {
           map: type,
           roam: true,
-          regionHeight: 2.5,
+          aspectScale: 0.75,
+          // center: [115.97, 29.71],
+          scaleLimit: {
+            min: 0.75
+          },
           itemStyle: {
             color: '#e1e1e1',
             borderWidth: 2.5,
@@ -175,15 +179,16 @@ export default {
       let mychart = echarts.getInstanceByDom(document.getElementById(id));
       if(!mychart){
         mychart = echarts.init(document.getElementById(id));
+        mychart.on('click', function(param){
+          console.log(param)
+          console.log(param.name)
+          if(param.name === 'China'){
+            that.mapgeotest('myechart', 'china');
+          }
+        })
       }
-      mychart.setOption(geooption);
-      mychart.on('click', function(param){
-        console.log(param)
-        console.log(param.name)
-        if(param.name === 'China'){
-          that.mapgeotest('myechart', 'china');
-        }
-      })
+      console.log(geooption)
+      mychart.setOption(geooption, true);
       // mychart.on('mouseout', function(param){
       //   console.log(mychart.getOption())
       //   if(param.data && param.data.fl){

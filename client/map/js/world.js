@@ -1,4 +1,6 @@
 (function (root, factory) {
+  debugger
+  typeof define === 'function'
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['exports', 'echarts'], factory);
